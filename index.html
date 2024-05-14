@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main
+        {
+            background-color: skyblue;
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <label for="row">enter no.of rows:</label>
+        <input type="number" id="a1"><br>
+        <label for="row">enter no.of columns"</label>
+        <input type="number" id="a2"><br>
+        <button ondblclick="myfun()">create a table</button>
+    </div>
+</body>
+<script>
+    function myfun(){
+        var a=document.getElementById("a1").value
+        var b=document.getElementById("a2").value
+        var c=document.getElementsByClassName("main")[0]
+        var td=document.getElementsByTagName("table")
+        if(td.length>0)
+        {
+            c.removeChild(td[0])
+        }
+        var g=0;
+        var x=document.createElement("table")
+        c.appendChild(x)
+        for(var i=1;i<=a;i++)
+        {
+          
+            var y=document.createElement("tr")
+            x.appendChild(y) ; 
+            for(var j=1;j<=b;j++)
+            {
+                g++;
+                var z=document.createElement("td")
+                y.appendChild(z)
+                z.width="50px"
+                z.height="50px"
+                z.innerHTML+=g
+            }
+            x.border="1px"
+        }
+        // alert("helo")
+    }
+</script>
+</html>
